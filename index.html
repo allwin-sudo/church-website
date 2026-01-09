@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Rehoboth Prayer House</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+
+/* Hamburger */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1000;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #f9fbff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    padding-top: 80px;
+    transition: 0.4s ease;
+    z-index: 1002;
+}
+
+.side-menu a {
+    display: block;
+    padding: 16px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #2c5aa0;
+}
+
+.side-menu a:hover {
+    background: #eaf4ff;
+}
+
+/* HOME */
+.section {
+    display: none;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+#home {
+    display: block;
+    background: linear-gradient(to bottom, #ffffff, #eaf4ff);
+}
+
+#home h1 {
+    font-size: 52px;
+    margin: 0;
+    color: #2c5aa0;
+}
+
+#home h2 {
+    font-size: 32px;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #555;
+}
+
+.intro {
+    max-width: 800px;
+    margin: 30px auto;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* SERVICE & EVENTS */
+.section h3 {
+    font-size: 40px;
+    color: #2c5aa0;
+    margin-bottom: 30px;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+    font-size: 18px;
+}
+
+.section li {
+    padding: 14px 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #home h1 { font-size: 40px; }
+    #home h2 { font-size: 26px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Hamburger -->
+<div class="hamburger" onclick="openMenu()">☰</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Side Menu -->
+<div class="side-menu" id="sideMenu">
+    <a href="#" onclick="showHome()">Home</a>
+    <a href="#" onclick="showService()">Service Timings</a>
+    <a href="#" onclick="showEvents()">Church Events</a>
+</div>
+
+<!-- HOME -->
+<div id="home" class="section">
+    <h1>Welcome To</h1>
+    <h2>New Rehoboth Prayer House</h2>
+
+    <div class="intro">
+        All glory belongs to the name of Jesus Christ.
+        This ministry is not built by human strength, but by the grace and will of God.
+        Everything we have is from Him and exists for His glory.
+    </div>
+</div>
+
+<!-- SERVICE TIMINGS -->
+<div id="service" class="section">
+    <h3>Service Timings</h3>
+    <ul>
+        <li>✓ Sunday Morning Service – 8:00 AM to 10:30 AM</li>
+        <li>✓ Sunday School – 10:30 AM to 11:00 AM</li>
+        <li>✓ Youth Fellowship – 11:00 AM to 12:00 PM</li>
+        <li>✓ Second Sunday – Communion Service</li>
+    </ul>
+</div>
+
+<!-- CHURCH EVENTS -->
+<div id="events" class="section">
+    <h3>Church Events</h3>
+    <ul>
+        <li>✓ Monday to Friday – Early Morning Prayer (5:00 AM to 6:00 AM)</li>
+        <li>✓ Monday to Friday – Midday Prayer (11:00 AM to 12:00 PM)</li>
+        <li>✓ Monday Evening – Sisters Fellowship (7:00 PM)</li>
+        <li>✓ Tuesday Evening – Anointing Prayer (7:00 PM)</li>
+        <li>✓ Wednesday – Cell Prayer Meeting</li>
+        <li>✓ Thursday Evening – Bible Study (6:30 PM)</li>
+        <li>✓ Friday Evening – Telugu Service (7:00 PM to 8:00 PM)</li>
+        <li>✓ Saturday Morning – Fasting Prayer (10:30 AM to 1:00 PM)</li>
+        <li>✓ Saturday Night – Waiting Prayer (Kathiruppu Jebam) (7:00 PM)</li>
+    </ul>
+</div>
+
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").style.left = "0";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+    document.getElementById("sideMenu").style.left = "-260px";
+    document.getElementById("overlay").style.display = "none";
+}
+
+function hideAll() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("service").style.display = "none";
+    document.getElementById("events").style.display = "none";
+}
+
+function showHome() {
+    closeMenu();
+    hideAll();
+    document.getElementById("home").style.display = "block";
+}
+
+function showService() {
+    closeMenu();
+    hideAll();
+    document.getElementById("service").style.display = "block";
+}
+
+function showEvents() {
+    closeMenu();
+    hideAll();
+    document.getElementById("events").style.display = "block";
+}
+</script>
+
+</body>
+</html>
