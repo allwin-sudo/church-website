@@ -61,13 +61,14 @@ body {
     background: #eaf4ff;
 }
 
-/* HOME */
+/* Sections */
 .section {
     display: none;
     padding: 90px 20px;
     text-align: center;
 }
 
+/* HOME */
 #home {
     display: block;
     background: linear-gradient(to bottom, #ffffff, #eaf4ff);
@@ -93,7 +94,7 @@ body {
     line-height: 1.7;
 }
 
-/* SERVICE & EVENTS */
+/* Service & Events */
 .section h3 {
     font-size: 40px;
     color: #2c5aa0;
@@ -111,6 +112,35 @@ body {
 
 .section li {
     padding: 14px 0;
+}
+
+/* Prayer Request */
+#prayer h3 {
+    font-size: 42px;
+    color: #2c5aa0;
+    margin-bottom: 30px;
+}
+
+.prayer-box {
+    background: #f1f7ff;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.prayer-box a {
+    display: block;
+    font-size: 22px;
+    margin: 18px 0;
+    color: #0066cc;          /* BLUE LINK */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.prayer-box a:hover {
+    color: #003366;
 }
 
 /* Mobile */
@@ -134,6 +164,7 @@ body {
     <a href="#" onclick="showHome()">Home</a>
     <a href="#" onclick="showService()">Service Timings</a>
     <a href="#" onclick="showEvents()">Church Events</a>
+    <a href="#" onclick="showPrayer()">Prayer Request</a>
 </div>
 
 <!-- HOME -->
@@ -148,7 +179,7 @@ body {
     </div>
 </div>
 
-<!-- SERVICE TIMINGS -->
+<!-- SERVICE -->
 <div id="service" class="section">
     <h3>Service Timings</h3>
     <ul>
@@ -159,20 +190,31 @@ body {
     </ul>
 </div>
 
-<!-- CHURCH EVENTS -->
+<!-- EVENTS -->
 <div id="events" class="section">
     <h3>Church Events</h3>
     <ul>
-        <li>✓ Monday to Friday – Early Morning Prayer (5:00 AM to 6:00 AM)</li>
-        <li>✓ Monday to Friday – Midday Prayer (11:00 AM to 12:00 PM)</li>
+        <li>✓ Monday to Friday – Early Morning Prayer (5:00 AM – 6:00 AM)</li>
+        <li>✓ Monday to Friday – Midday Prayer (11:00 AM – 12:00 PM)</li>
         <li>✓ Monday Evening – Sisters Fellowship (7:00 PM)</li>
         <li>✓ Tuesday Evening – Anointing Prayer (7:00 PM)</li>
         <li>✓ Wednesday – Cell Prayer Meeting</li>
         <li>✓ Thursday Evening – Bible Study (6:30 PM)</li>
-        <li>✓ Friday Evening – Telugu Service (7:00 PM to 8:00 PM)</li>
-        <li>✓ Saturday Morning – Fasting Prayer (10:30 AM to 1:00 PM)</li>
-        <li>✓ Saturday Night – Waiting Prayer (Kathiruppu Jebam) (7:00 PM)</li>
+        <li>✓ Friday Evening – Telugu Service (7:00 PM – 8:00 PM)</li>
+        <li>✓ Saturday Morning – Fasting Prayer (10:30 AM – 1:00 PM)</li>
+        <li>✓ Saturday Night – Waiting Prayer (7:00 PM)</li>
     </ul>
+</div>
+
+<!-- PRAYER REQUEST -->
+<div id="prayer" class="section">
+    <h3>For Prayer Request</h3>
+
+    <div class="prayer-box">
+        <a href="tel:9600035633">📞 9600035633</a>
+        <a href="tel:9677761767">📞 9677761767</a>
+        <a href="tel:9543431703">📞 9543431703</a>
+    </div>
 </div>
 
 <script>
@@ -190,24 +232,27 @@ function hideAll() {
     document.getElementById("home").style.display = "none";
     document.getElementById("service").style.display = "none";
     document.getElementById("events").style.display = "none";
+    document.getElementById("prayer").style.display = "none";
 }
 
 function showHome() {
-    closeMenu();
-    hideAll();
+    closeMenu(); hideAll();
     document.getElementById("home").style.display = "block";
 }
 
 function showService() {
-    closeMenu();
-    hideAll();
+    closeMenu(); hideAll();
     document.getElementById("service").style.display = "block";
 }
 
 function showEvents() {
-    closeMenu();
-    hideAll();
+    closeMenu(); hideAll();
     document.getElementById("events").style.display = "block";
+}
+
+function showPrayer() {
+    closeMenu(); hideAll();
+    document.getElementById("prayer").style.display = "block";
 }
 </script>
 
